@@ -74,17 +74,17 @@ double coord_2d_area_triangle(const coord_2d_t* a, const coord_2d_t* b, const co
 	double area=0;    
 	if(!a){
 	        DEBUG(__FILE__, __LINE__, __func__, "'a' must not be NULL");
-	        return;
+	        return NAN;
 	}
   	if(!b){
         	DEBUG(__FILE__, __LINE__, __func__, "'b' must not be NULL");
-        	return;
+        	return NAN;
     	}
     	if(!c){
         	DEBUG(__FILE__, __LINE__, __func__, "'c' must not be NULL");
-        	return;
+        	return NAN;
     	}
-	area=((a->x*(b->y-c->y)+b->x*(c->y-a->y)+c->x*(a->y-b->y))/2);
+	area=abs((a->x*(b->y-c->y)+b->x*(c->y-a->y)+c->x*(a->y-b->y))/2);
 	return area;
 	
 }
