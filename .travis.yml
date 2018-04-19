@@ -1,2 +1,4 @@
-./configure && make && make test
 language: c
+sudo: enable
+install: make dep
+script: make test
